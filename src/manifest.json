@@ -1,0 +1,17 @@
+{
+  "name": "Gist User Script Manager",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "User script manager which based on github gists",
+  "author": "Stefan Breitenstein",
+  "icons": {
+    "16": "res/icon16.png",
+    "48": "res/icon48.png",
+    "128": "res/icon128.png"
+  },
+  "devtools_page": "devtools.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost:8098; object-src 'self'",
+  "permissions": [
+    "identity"
+  ]
+}

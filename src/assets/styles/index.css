@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    button {
+        @apply bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow;
+    }
+
+    button:hover {
+        @apply bg-gray-100;
+    }
+
+    a {
+        @apply text-orange-600;
+    }
+
+    a:hover {
+        @apply underline;
+    }
+}

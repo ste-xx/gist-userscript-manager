@@ -1,0 +1,96 @@
+{
+  "name": "gist-user-script-manager",
+  "version": "0.0.1",
+  "private": false,
+  "scripts": {
+    "generate-gql-types": "ts-node-script build/generate-graphql-types/cli.ts",
+    "test": "npm run generate-gql-types && jest",
+    "serve": "npm run generate-gql-types && vue-cli-service serve",
+    "build": "npm run generate-gql-types && vue-cli-service build",
+    "build:dev": "npm run generate-gql-types && vue-cli-service build --mode development --watch",
+    "build:zipinstaller": "npm run generate-gql-types && vue-cli-service build --mode zipinstaller",
+    "lint": "vue-cli-service lint",
+    "ts-check": "tsc --noEmit",
+    "zip": "cd dist/ && bestzip ../gist-userscript-manager.zip *",
+    "zip:zipinstaller": "cd dist/ && bestzip ../local-gist-userscript-manager.zip *"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/vue-fontawesome": "^3.0.0-1",
+    "@octokit/graphql": "^4.5.6",
+    "@octokit/rest": "^18.0.6",
+    "@tailwindcss/custom-forms": "^0.2.1",
+    "@types/node-fetch": "^2.5.7",
+    "@vue/devtools": "^6.0.0-beta.2",
+    "core-js": "^3.6.5",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "monaco-editor": "^0.21.2",
+    "nanoid": "^3.1.16",
+    "tailwindcss": "^1.9.2",
+    "vue": "^3.0.2",
+    "vue-router": "^4.0.0-beta.13",
+    "vuex": "^4.0.0-beta.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/ace": "0.0.44",
+    "@types/chrome": "0.0.124",
+    "@types/diff": "^4.0.2",
+    "@types/jest": "^26.0.14",
+    "@types/jsdom": "^16.2.4",
+    "@types/node": "^14.14.6",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-typescript": "^4.5.7",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.1",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "@wistudent/jest-each-improved-types": "^1.0.3",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.5.2",
+    "bestzip": "^2.1.7",
+    "chrome-webstore-upload": "^0.4.2",
+    "copy-webpack-plugin": "^6.2.0",
+    "css.escape": "^1.5.1",
+    "del": "^6.0.0",
+    "eslint": "^7.12.1",
+    "eslint-plugin-vue": "^7.1.0",
+    "jest": "^26.5.3",
+    "jest-junit": "^12.0.0",
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.1.2",
+    "raw-loader": "^4.0.2",
+    "monaco-editor-webpack-plugin": "^2.0.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.0-beta",
+    "webpack-extension-reloader": "^1.1.4"
+  },
+  "browserslist": [
+    "last 2 Chrome versions"
+  ],
+  "prettier": {
+    "trailingComma": "none",
+    "printWidth": 200
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run ts-check"
+    }
+  },
+  "lint-staged": {
+    "(src|test)/**/*.@(js|vue|ts)": [
+      "eslint"
+    ]
+  }
+}
