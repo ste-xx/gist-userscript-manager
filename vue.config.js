@@ -14,7 +14,13 @@ module.exports = {
           const manifest = JSON.parse(content);
 
           if (process.env.INCLUDE_KEY === 'true') {
-            manifest.key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApuOA55Y/VfUyydcI2cWcezmCtvDjZ0ANF7eyq5SCvWiVvCca+qInh91GipobJQb3iFw5GXN0as4pJKbZg6pNRKn285Fo0uyegsdGMnXy//2tZ/yOgX7QiI0LM5XBc+NUPVER+QBsE/gbflKb0g3Z5aUcSJWreHxPqs8+PD/o2v6Z8YEmnEwDhn8w/YXmOiqnDrW4+4wEo49oOQYuVvehfFpE4dm8h9W/47tQNI2lmPrN7U8FTqdZnksmaUBUXaUUzIxhCDA3krYK/h+PrQq4i1F9hGt3YPDRhvkmNrZQsclfS+BdYE3yuWoNIQTJYO2xIhsrub4vBhvyl9W9SmPdyQIDAQAB";
+            manifest.key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg8eYUxVzvqDLHWq3z93P"+
+              "tJ/9gOv84r7yLJ3r311VBZW9GmzMmgFsPKAF9Bfcr2dNYCwU6W72Z+stxYNnfgz8" +
+              "5HXBELbearnsDpzF56TlSJNhWqE2/6HTn32qZ6dI5Pnq7oEhUITkbWESePvw3k2j" +
+              "V0vTp6yJSFIyP+2+dP7/m6KOfcBhuJZi6RsDdfIw35XOJ+ORnfVJ3v1d5m0wAGF4" +
+              "aUlgHsN8SIn043YZb7w+upuiCrmxHjhi6a+NY80tlMZDG7Fyi25KBSsjvrsC2HWR" +
+              "lF6snolockJWWpwr+tmLIgazpXV9Z1YLZWExBKq2iiSPLKEdTjep1mngeNqYvkuZ" +
+              "nQIDAQAB";
           }
 
           manifest.version = `${version}.0`;
@@ -31,7 +37,8 @@ module.exports = {
       .plugin('reloader').use(ExtensionReloader).end()
       .plugin('monacoEditor').use(MonacoWebpackPlugin).end()
       .plugin('copy').use(CopyPlugin, [{patterns: copyPluginPatterns}]).end()
-      .optimization.delete('splitChunks').end()
+      .optimization.delete('splitChunks').end();
+
 
     // .gql files
     config.module.rule('gql')
