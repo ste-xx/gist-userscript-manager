@@ -2,6 +2,7 @@
   <div>
     hello world
   </div>
+  <button>login</button>
 </template>
 
 <script setup lang="ts">
