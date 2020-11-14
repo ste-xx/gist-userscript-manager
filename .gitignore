@@ -33,3 +33,5 @@ github.graphql
 
 # generated graphql ts types
 **/__gen_gql/**/*
+
+.env
