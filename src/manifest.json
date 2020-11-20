@@ -13,6 +13,7 @@
   "content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost:8098; object-src 'self'",
   "permissions": [
     "identity",
-    "https://*.github.com/*"
+    "https://github.com/login/oauth/authorize",
+    "https://github.com/login/oauth/access_token"
   ]
 }

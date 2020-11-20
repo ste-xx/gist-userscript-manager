@@ -1,5 +1,5 @@
 <template>
-  <label>Auto login</label>
+  <label class="mr-2">Auto Sign in</label>
   <input
       v-model="autoLogin"
       type="checkbox"

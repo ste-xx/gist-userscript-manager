@@ -1,11 +1,17 @@
 <template>
-  <div>
-    <button @click="login">login</button>
-    <div>
-     You need to login to github, to use your gists with this dev tool.
+  <div class="login--container">
+    <div style="grid-area: button">
+      <button @click="login" class="flex mr-2">
+        <fa type="fab" icon="github" class="h-4 mr-2"/>
+        Sign in
+      </button>
     </div>
-    <AutoLogin/>
-
+    <div style="grid-area: autologin">
+      <AutoLogin/>
+    </div>
+    <div style="grid-area: description">
+      You need to sign in to github, to use your gists with this dev tool.
+    </div>
   </div>
 </template>
 
@@ -25,5 +31,21 @@ onMounted(()=> {
   }
 });
 
-
 </script>
+
+<style scoped>
+.login--container {
+  display: grid;
+  grid-template-areas:
+  '. . .'
+  '. button .'
+  '. autologin .'
+  'description description description'
+  '. . .';
+  grid-template-rows: 250px 2rem 1rem auto auto;
+  grid-template-columns: 100px 150px 100px;
+  justify-content: center;
+  grid-row-gap: 10px;
+  min-height: 100%;
+}
+</style>
