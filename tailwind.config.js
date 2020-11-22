@@ -18,8 +18,8 @@ module.exports = {
       default: {
         input: {
           '&:focus': {
-            borderColor: theme('colors.orange.500'),
-            boxShadow: `0 0 0 3px ${theme('colors.orange.400')}`
+            borderColor: theme('colors.blue.500'),
+            boxShadow: `0 0 0 3px ${theme('colors.blue.400')}`
           }
         }
       },
